@@ -3,7 +3,7 @@ import classes from './inputZipCode.module.css'
 const InputZipCode:React.FC<{}> = () => {
 
     const [zipCodeUs, setZipCodeUs] = useState('')
-
+    const exceptThisSymbols = ["e", "E", "+", "-", "."];
     const isValid = (zipCode:string) => {
         return /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
      }
@@ -18,7 +18,7 @@ const InputZipCode:React.FC<{}> = () => {
      }
 
     return(
-        <input type='number' min='0' className={classes.inputZipCode} onChange={handleSetZipCodeUs} value={zipCodeUs}></input>
+        <input type='number' min='0' onKeyDown={e => exceptThisSymbols.includes(e.key) && e.preventDefault()} className={classes.inputZipCode} onChange={handleSetZipCodeUs} value={zipCodeUs}></input>
     )
 }
 export default InputZipCode
