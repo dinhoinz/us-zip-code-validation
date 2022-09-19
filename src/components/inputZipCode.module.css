@@ -2,11 +2,18 @@
         border: 2px solid red;
         background-color: #b22234;
     }
-    .valid{
-        background-color: green;
-    }
-    .inputZipCode{
+.inputZipCode{
         height: 40px;
         border-radius: 5px;
         border: none;
-    }
+}
+.inputZipCode::-webkit-outer-spin-button,
+.inputZipCode::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.inputZipCode[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

@@ -18,7 +18,7 @@ const InputZipCode:React.FC<{}> = () => {
      }
 
     return(
-        <input type='text' className={classes.inputZipCode} onChange={handleSetZipCodeUs} value={zipCodeUs}></input>
+        <input type='number' min='0' className={classes.inputZipCode} onChange={handleSetZipCodeUs} value={zipCodeUs}></input>
     )
 }
 export default InputZipCode
