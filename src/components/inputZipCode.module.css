@@ -1,0 +1,12 @@
+.invalid{
+        border: 2px solid red;
+        background-color: #b22234;
+    }
+    .valid{
+        background-color: green;
+    }
+    .inputZipCode{
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+    }
